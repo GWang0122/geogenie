@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .header {
+            padding: 15px;
+            text-align: center;
+        }
+        .title {
+            display: inline-block;
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.1em;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .title h3 {
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        #map {
+            height: calc(100vh - 100px);
+            width: 100%;
+            margin: 5px 0;
+            border-radius: 8px 0 0 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            width: 100%;
+            height: calc(100% - 60px);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .game-title {
+            display: none;
+        }
+        #jeopardyMusic {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <audio id="jeopardyMusic" src="jeopardy.mp3" preload="auto"></audio>
+    <div class="header">
+        <div class="title">
+            <h3>GeoGenie: The Geography Game</h3>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="game-title">🗺️ GeoGenie: The Geography Game</h1>
+        
+        <!-- Map Section -->
+        <div id="map"></div>
+
+        <!-- Debug Section -->
+        <div id="debugSection" class="bg-gray-800 text-gray-200 p-4 rounded-lg hidden">
+            <h3 class="font-semibold mb-2">Debug Information</h3>
+            <pre id="debugInfo" class="text-xs overflow-auto max-h-40"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
